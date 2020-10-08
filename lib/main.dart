@@ -100,9 +100,15 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            GestureDetector(
+              onForcePressStart: (forcePressDetails) => print('Force press start detected!'),
+              onForcePressPeak: (forcePressDetails) => print('Force press peak detected!'),
+              onForcePressEnd: (forcePressDetails) => print('Force press end detected!'),
+              onForcePressUpdate: (forcePressDetails) => print('Force press update detected!'),
+              child: Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
+              ),
             ),
           ],
         ),
